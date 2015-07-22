@@ -25,6 +25,10 @@ public abstract class AbstractFacade<T> {
     public void create(T entity) {
         getEntityManager().persist(entity);
     }
+	
+	 public void create(X entity) {
+        getEntityManager().persist(entity);
+    }
 
     public void edit(T entity) {
         getEntityManager().merge(entity);
@@ -85,6 +89,10 @@ public abstract class AbstractFacade<T> {
 //            em.close();
         }
         return results;
+    }
+	
+	 public void create(Y entity) {
+        getEntityManager().persist(entity);
     }
     
     public List<T> findRange(int[] range) {
